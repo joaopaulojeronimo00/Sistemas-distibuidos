@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: multicast
+spec:
+  serviceName: multicast
+  replicas: 3
+  selector:
+    matchLabels:
+      app: multicast
+  template:
+    metadata:
+      labels:
+        app: multicast
+    spec:
+      containers:
+        - name: multicast
+          image: multicast-lamport:1.0
+          ports:
+            - containerPort: 8080
