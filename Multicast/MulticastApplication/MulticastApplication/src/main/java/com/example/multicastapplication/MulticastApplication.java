@@ -91,9 +91,9 @@ public class MulticastApplication {
                         msg,
                         Void.class
                 );
-            }
 
-            tryDeliver();
+                tryDeliver();
+            }
         }
 
         // ===== RECEPÇÃO DE MENSAGEM =====
@@ -112,8 +112,6 @@ public class MulticastApplication {
                 acks.computeIfAbsent(msg.id(), k -> new HashSet<>()).add(msg.id.senderId);
             }
 
-            tryDeliver();
-
             AckMessage ack = new AckMessage(msg.id(), processId);
 
             for (String peer : peers) {
@@ -124,6 +122,8 @@ public class MulticastApplication {
                         ack,
                         Void.class
                 );
+
+                tryDeliver();
             }
         }
 
@@ -160,6 +160,7 @@ public class MulticastApplication {
                     }
 
                     pendingQueue.poll();
+                    acks.remove(head.id());
                 }
 
                 deliver(head);
