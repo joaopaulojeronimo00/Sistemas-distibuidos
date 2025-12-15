@@ -1,4 +1,4 @@
-package com.example.bullyalgoritm;
+package com.example.bullyalgorithm1;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -10,10 +10,10 @@ import org.springframework.web.client.RestTemplate;
 import java.util.*;
 
 @SpringBootApplication
-public class BullyAlgorithmApplication {
+public class BullyAlgorithm1Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(BullyAlgorithmApplication.class, args);
+        SpringApplication.run( BullyAlgorithm1Application.class, args);
     }
 
     // ===== MODELOS =====

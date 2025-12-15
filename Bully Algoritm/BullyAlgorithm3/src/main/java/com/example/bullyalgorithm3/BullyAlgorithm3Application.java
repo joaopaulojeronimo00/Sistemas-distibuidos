@@ -1,25 +1,31 @@
-package com.example.bullyalgoritm;
+package com.example.bullyalgorithm3;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 @SpringBootApplication
-public class BullyAlgorithmApplication {
+public class BullyAlgorithm3Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(BullyAlgorithmApplication.class, args);
+        SpringApplication.run(BullyAlgorithm3Application.class, args);
     }
 
     // ===== MODELOS =====
 
-    record Message(int fromProcess, String payload) {}
-    record Ack(int fromProcess) {}
+    record Message(int fromProcess, String payload) {
+    }
+
+    record Ack(int fromProcess) {
+    }
 
     // ===== SERVIÇO =====
 
@@ -90,7 +96,8 @@ public class BullyAlgorithmApplication {
                             Void.class
                     );
                     higherProcessAlive = true;
-                } catch (Exception ignored) {}
+                } catch (Exception ignored) {
+                }
             }
 
             if (!higherProcessAlive) {
@@ -134,7 +141,8 @@ public class BullyAlgorithmApplication {
                                 new Message(processId, "NEW_LEADER"),
                                 Void.class
                         );
-                    } catch (Exception ignored) {}
+                    } catch (Exception ignored) {
+                    }
                 }
             }
         }
@@ -199,4 +207,6 @@ public class BullyAlgorithmApplication {
         }
     }
 }
+
+
 
