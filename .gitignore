@@ -1,0 +1,51 @@
+# ===== Build =====
+/target/
+/build/
+
+# ===== Logs =====
+*.log
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== IDEs =====
+## IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+## Eclipse
+.classpath
+.project
+.settings/
+
+## VS Code
+.vscode/
+
+# ===== Maven Wrapper =====
+!.mvn/wrapper/maven-wrapper.jar
+
+# ===== Gradle Wrapper =====
+!.gradle/wrapper/gradle-wrapper.jar
+
+# ===== Spring Boot =====
+/logs/
+*.pid
+
+# ===== Environment =====
+.env
+.env.*
+
+# ===== Test Reports =====
+/surefire-reports/
+/failsafe-reports/
+
+# ===== Lombok =====
+.lombok
+
+# ===== Node (caso haja frontend embutido) =====
+node_modules/
+dist/
